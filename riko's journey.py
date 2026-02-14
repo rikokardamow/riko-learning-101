@@ -1,10 +1,43 @@
 # ============================================================================
 # MY PYTHON LEARNING JOURNEY
 # ============================================================================
-# This document tracks my progress learning Python fundamentals
+# This document tracks my progress revitalizing Python skills from my MSc
 # Each section builds on the previous one
 # ============================================================================
+# KEY TAKEAWAYS FROM MY LEARNING
+# ============================================================================
 
+"""
+1. Python has both MUTABLE (can change) and IMMUTABLE (cannot change) types
+   - Mutable: lists, dicts, sets
+   - Immutable: strings, tuples, numbers
+
+2. Methods vs Functions:
+   - Functions: called directly, e.g., len(my_list)
+   - Methods: called on objects with dot notation, e.g., my_list.append(5)
+
+3. Scope matters:
+   - Variables defined in functions are local unless returned
+   - Use return to pass values out of functions
+
+4. Indexing starts at 0 in Python
+   - Use negative indices to count from the end: -1 is last item
+
+5. Following PEP 8 style makes code professional and readable
+
+6. Comments and docstrings help explain WHY code exists, not just WHAT it does
+
+7. Loops let you repeat operations:
+   - while loops: condition-based repetition
+   - for loops: iterate through sequences
+   - List comprehensions: elegant one-line list creation
+
+8. Functions are essential for:
+   - Code reusability
+   - Organization
+   - Abstraction
+   - Testing
+"""
 # ============================================================================
 # SECTION 1: COMMENTS AND DOCUMENTATION
 # ============================================================================
@@ -74,7 +107,7 @@ num_1 -= 2  # Same as: num_1 = num_1 - 2
 num_3 *= 5  # Same as: num_3 = num_3 * 5
 
 # Comparison operators return True or False
-num_3 != num_4  # Not equal to
+num_3 != num_1  # Not equal to
 num_3 > num_2   # Greater than
 num_3 == num_1  # Equal to (note: double ==, not single =)
 
@@ -230,31 +263,131 @@ my_dict.items()    # Returns key-value pairs as tuples
 # Removing items
 my_dict.pop("age")  # Removes 'age' key and returns its value (23)
 
+# ============================================================================
+# SECTION 13: CUSTOM FUNCTIONS
+# ============================================================================
+# Functions let you package reusable code with a name
+
+# Basic function with no parameters
+def hello_world():
+    """Prints a greeting message"""
+    print('Hello World')
+
+hello_world()  # Prints: Hello World
+
+# Understanding scope - variables defined inside functions are local
+def see_the_scope():
+    """Demonstrates local variable scope"""
+    in_function_string = "I'm stuck in here!"
+    print(in_function_string)
+
+see_the_scope()
+# in_function_string is not accessible outside the function
+
+# Using return to get values out of functions
+def free_the_scope():
+    """Returns a value that can be used outside the function"""
+    in_function_string = "Anything you can do I can do better!"
+    return in_function_string
+
+my_string = free_the_scope()  # Captures the returned value
+print(my_string)
+
+# Functions with parameters
+def multiply_by_five(x):
+    """Multiply input by 5"""
+    return x * 5
+
+print(multiply_by_five(10))  # Returns: 50
+
+# Functions with multiple parameters
+def calculate_area(length, width):
+    """Calculate the area of a rectangle"""
+    return length * width
+
+l = 5
+w = 10
+print("area:", calculate_area(l, w))  # area: 50
+print("length:", l)
+print("width:", w)
+
+# More complex calculations
+def calculate_volume(length, width, depth):
+    """Calculates the volume of a rectangular prism"""
+    return length * width * depth
+
+d = 111
+print("length:", l)
+print("width:", w)
+print("depth:", d)
+print("volume:", calculate_volume(l, w, d))  # volume: 5550
+
+# Using *args to accept variable number of arguments
+def sum_values(*args):
+    """Sum any number of arguments passed to the function"""
+    sum_val = 0
+    for i in args:
+        sum_val += i
+    return sum_val
+
+print(sum_values(1, 2, 3))              # Returns: 6
+print(sum_values(10, 20, 30, 40, 50))   # Returns: 150
+
+# Inspecting *args - it becomes a tuple
+def test_args(*args):
+    """Shows that *args collects arguments into a tuple"""
+    print(args)
+
+test_args(1, 2, 3, 4)  # Prints: (1, 2, 3, 4)
+
+# ============================================================================
+# SECTION 14: LOOP STRUCTURES
+# ============================================================================
+
+# While loops: repeat as long as condition is True
+i = 5
+while i > 0:  # Continue while i is greater than 0
+    i -= 1
+    print(f"I am looping, {i} more to go!")
+
+
+
+
+
+# The condition 'while i:' would also work because 0 evaluates to False
+# Any non-zero number evaluates to True
+
+# For loops: iterate over sequences
+#fruits = ['apple', 'banana', 'cherry']
+#for fruit in fruits:
+    #print(f"I like {fruit}")
+
+# Loop through a range of numbers
+#for num in range(5):  # 0, 1, 2, 3, 4
+    #print(f"Number: {num}")
+
+# Range with start and end
+#for num in range(1, 6):  # 1, 2, 3, 4, 5
+    #print(f"Count: {num}")
+
+# Range with step
+#for num in range(0, 10, 2):  # 0, 2, 4, 6, 8
+    #print(f"Even number: {num}")
+
+# Loop through dictionary keys
+#for key in dict_1:
+    #print(f"{key}: {dict_1[key]}")
+
+# Loop through key-value pairs
+#for key, value in dict_1.items():
+    #print(f"{key} = {value}")
+
+# List comprehension: create lists in one line
+#squares = [x**2 for x in range(10)]  # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+# Conditional list comprehension
+#evens = [x for x in range(20) if x % 2 == 0]  # [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
 
 
 
 # ============================================================================
-# KEY TAKEAWAYS FROM MY LEARNING
-# ============================================================================
-
-"""
-1. Python has both MUTABLE (can change) and IMMUTABLE (cannot change) types
-   - Mutable: lists, dicts, sets
-   - Immutable: strings, tuples, numbers
-
-2. Methods vs Functions:
-   - Functions: called directly, e.g., len(my_list)
-   - Methods: called on objects with dot notation, e.g., my_list.append(5)
-
-3. Indexing starts at 0 in Python
-   - Use negative indices to count from the end: -1 is last item
-
-4. Following PEP 8 style makes code professional and readable
-
-5. Comments and docstrings help explain WHY code exists, not just WHAT it does
-"""
-dict_1
-
-dict_1.keys()
-
-
