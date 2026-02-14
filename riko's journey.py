@@ -1,236 +1,260 @@
-## Code Comment ##
-# This is a comment ~ way to explain your thinking process!
-# These lines of code will not change any values
-# Anything following the first # is not run as code
+# ============================================================================
+# MY PYTHON LEARNING JOURNEY
+# ============================================================================
+# This document tracks my progress learning Python fundamentals
+# Each section builds on the previous one
+# ============================================================================
 
-""""This is a special string"""
+# ============================================================================
+# SECTION 1: COMMENTS AND DOCUMENTATION
+# ============================================================================
 
-#Code Conventions
-#style familiar to your writing style
+# Single-line comments start with #
+# They explain what the code does without affecting how it runs
 
-#Use Four Spaces for indentation.
+"""
+Multi-line strings (docstrings) are created with triple quotes.
+They're often used to document functions and classes.
+"""
 
+# ============================================================================
+# SECTION 2: PYTHON CODING CONVENTIONS (PEP 8)
+# ============================================================================
+# Following these standards makes code readable and professional
+
+# Use 4 spaces for indentation (not tabs)
 if True:
-    x = 5 # Four indentions
+    x = 5  # This is properly indented
 
-#use Lowercase with Underscores for Variable and Function Names.
-#Variables and function names should be in lowercase, with word separated by underscores as necessary to improve readability.
-
+# Variable and function names: lowercase_with_underscores
 my_variable = 1
+
 def my_function():
+    """Functions should have docstrings explaining what they do"""
     pass
 
-#camel cases uses for mainly Class
-
+# Class names: CamelCase
 class MyNewClass():
+    """Classes represent blueprints for objects"""
     pass
 
-x = 1
-x = x + 1 # Increment X
+# Spacing around operators improves readability
+age = 4 + 18  # Good: spaces around +
+# age=4+18    # Bad: no spaces (harder to read)
 
-import os
-import sys
+# ============================================================================
+# SECTION 3: BASIC DATA TYPES
+# ============================================================================
 
-# from third_party import local_module #This is not exist, just for sample code
+# Python has several built-in data types:
+# - int: whole numbers (10, -5, 0)
+# - float: decimal numbers (3.14, -0.5)
+# - str: text ("hello")
+# - bool: True or False
+# - NoneType: represents "no value" (None)
 
-#Correct
-age = 4 + 18
-
-#Incorrect
-age=4+18
-
-
-def square(number):
-    """"Return the square of the number"""
-    return number * number
-
-square(5)
-
-#Objects,types and Variables
-#int(integer, a whole number with no decimal place)
-#float / String / bool(True/False) / NoneType
+# ============================================================================
+# SECTION 4: BASIC MATH OPERATIONS
+# ============================================================================
 
 num_1 = 10
 num_2 = 2
 num_3 = 6
 
-num_1 + num_2
+# Basic arithmetic
+num_1 + num_2  # Addition: 12
+num_1 - num_3  # Subtraction: 4
+num_2 * num_2  # Multiplication: 4
+num_1 / num_3  # Division: 1.666...
+num_3 ** num_2  # Exponentiation (power): 36
 
-num_1 - num_3
+# Compound assignment operators (shorthand)
+num_1 += 2  # Same as: num_1 = num_1 + 2
+num_1 -= 2  # Same as: num_1 = num_1 - 2
+num_3 *= 5  # Same as: num_3 = num_3 * 5
 
-num_2 * num_2
+# Comparison operators return True or False
+num_3 != num_4  # Not equal to
+num_3 > num_2   # Greater than
+num_3 == num_1  # Equal to (note: double ==, not single =)
 
-num_1 / num_3
-
-num_3 ** num_2
-
-num_1 += 2
-num_1
-
-num_1-=2
-num_1
-
-num_3 *=5
-num_3
-
-num_4 = num_1 + num_2 + num_3
-num_4
-
-num_3 != num_4
-
-num_3 > num_2
+# ============================================================================
+# SECTION 5: WORKING WITH STRINGS
+# ============================================================================
 
 simple_string_1 = "in example"
-simple_string_1 = simple_string_1 + " we re working"
-simple_string_1
+simple_string_1 = simple_string_1 + " we're working"  # Concatenation
+# Result: "in example we're working"
 
-num_3 -=5
-num_3
+simple_string_1 *= 3  # String repetition
+# Result: "in example we're workingin example we're workingin example we're working"
 
-num_3 > num_1
+# ============================================================================
+# SECTION 6: DATA STRUCTURES (COLLECTIONS)
+# ============================================================================
 
-num_3 ** num_1 == num_2
-
-simple_string_1 *=3
-simple_string_1
-
-# Data Structures (colletions)
-
-# str( string: immutable, indexed by integers; items are stored in the order they were added. You cannot change the values within immutable thing.
-# list (list; mutable; indexed by integers; items are stored in the order they were added.
+# Lists: Ordered, mutable (can be changed), indexed by integers
 list_1 = [3, 5, 6, 3, 'dog', 'cat', False]
+# Can hold different data types, allows duplicates
 
-#tuple( tiple;immutable; indexed by integers; items are stored in the order they were added)
-tuple_1 = (3, 5, 6, 'dog', ' cat', False)
+# Tuples: Ordered, immutable (cannot be changed), indexed by integers
+tuple_1 = (3, 5, 6, 'dog', 'cat', False)
+# Use when you want data that shouldn't change
 
-#dict (dictionary; mutable; key-value pairs are indexed by immutable keys; as of Python 3.7, items are stored in teh order they were added)
-dict_1 = {'name': 'Jane', 'age': 23, 'fav_foods': ['pizza', 'fruit', 'fish']}
-dict_2 = {'name': 'Javier', 'age': 45, 'fav_foods': ['chicken', 'veg', 'candy']}
+# Dictionaries: Key-value pairs, mutable, indexed by keys
+dict_1 = {
+    'name': 'Jane',
+    'age': 23,
+    'fav_foods': ['pizza', 'fruit', 'fish']
+}
 
+dict_2 = {
+    'name': 'Javier',
+    'age': 45,
+    'fav_foods': ['chicken', 'veg', 'candy']
+}
 
-list_1
-set_1
-dict_1
-dict_2
+# Sets: Unordered, mutable, no duplicates allowed
+set_1 = {'Jason', 'chicken'}  # Duplicates automatically removed
 
-#Accessing Data in collections
-#strings, lists and tuples are indexed by integers and starting from 0 for the first item
-    #these sequence types also support accessing a range of items, known as slicing
-    #use negative indexing to start at the back of the sequence
-#dict are indexed by their keys
+# ============================================================================
+# SECTION 7: ACCESSING DATA IN COLLECTIONS
+# ============================================================================
 
-list_1[3:5]
+# Lists, tuples, and strings use index numbers (starting at 0)
+list_1[0]      # First item: 3
+list_1[3]      # Fourth item: 3
+list_1[-1]     # Last item: False
+list_1[-2]     # Second-to-last item: 'cat'
 
-list_1[-2:]
-tuple_1[-0:]
+# Slicing: getting a range of items [start:end]
+# Note: end index is NOT included
+list_1[3:5]    # Items at index 3 and 4: [3, 'dog']
+list_1[-2:]    # Last two items: ['cat', False]
+tuple_1[0:]    # All items from start: (3, 5, 6, 'dog', 'cat', False)
 
-dict_1["fav_foods"]
-dict_2['age']
+# Dictionaries use keys to access values
+dict_1["fav_foods"]  # Returns: ['pizza', 'fruit', 'fish']
+dict_2['age']        # Returns: 45
 
-#Built-in functions and callables
-# A function is a Python object that you can "call" to perform an action or compute and return another object.
-# You call a function by placing parenthesis to the right of the function name. Some functions allow you to pass arguments inside the parentheses (separating multiple arguments with a comma). Internal to the function, these arguments are treated like variables.
-    # type(obj) to determine the type of an object
-    # isinstance(val, obj) to determine if val is an obj
-    # len(container) to determine how many items are in a container
-    # callable(obj) to determine if an object is callable
-    # sorted(container) to return a new list from a container, with the items sort
-    # sum(container) to cumpute thye sum of a container of numbers
-    # min(container) to determine the smallest item in a container
-    # max(container) to determine the largest item in a container
-    # abs(container) to determine the absolute value of a number
-    # repr(obj) to return a string respresentation of an object
+# ============================================================================
+# SECTION 8: BUILT-IN FUNCTIONS
+# ============================================================================
+# Functions you can call to perform common tasks
 
-type("1.1")
+type("1.1")                    # Returns: <class 'str'> (it's a string, not float)
+isinstance("1.1", float)       # Returns: False (checking if it's a float)
+len([1, 2, 3])                 # Returns: 3 (number of items)
+len(simple_string_1)           # Returns: length of string
+len(dict_1)                    # Returns: 3 (number of key-value pairs)
 
-isinstance("1.1", float)
+sorted([10, 99, 2.3, 1111, 123123123, 235235])  # Returns sorted list
+sorted("jason")                # Returns: ['a', 'j', 'n', 'o', 's']
 
-len([1, 2, 3])
+sum([10, 1232131, 123777, 0.5555])  # Returns sum of all numbers
+min([10, 2, 100])              # Returns: 2 (smallest)
+max([10, 2, 100])              # Returns: 100 (largest)
+abs(-5)                        # Returns: 5 (absolute value)
 
-len(simple_string_1)
-len(dict_1)
-
-sorted([10, 99 ,2.3, 1111, 123123123, 235235])
-sorted("jason")
-
-sum([10,1232131, 123777, 0.5555])
-
-# Object attributes (methods and properties)
-# Different types of objects in Python have different attributes that can be referred tyo by name (similar to variable). To access an attribute of an object, use a dot (.) after the object, then specify the attribute(i.e. obj.attribute)
-# When an attribute of an object is callable, that attribute is a called a method. It is the same as function, only this fuction is bound to particular object.
-# When an attribute of an object is not callable, that attribute is called a property. It is just, that is itself another object.
-# The built-in dir() function can be used to return a list of an object's attributes.
-
-# Methods on strings
-
-# .capitalize() to return a capitalized version of the string(only first character uppercase)
-# .upper() to return an uppercase version of the string (all chars uppercase)
-# .lower() to return an lowercase version of the string (all chars lowercase)
-# .count(substring) to return the number of occurences of the substring in the string
-# .replace(old, new) to return a copy of string with occurences of the old replaced by new
+# ============================================================================
+# SECTION 9: STRING METHODS
+# ============================================================================
+# Methods are functions that belong to a specific object type
 
 a_string = "tHis is a sTrInG"
-a_string.capitalize()
 
-a_string.lower()
-a_string.upper()
-a_string.count("t", 3)
-a_string.count('is')
-a_string.endswith('Ng')
+a_string.capitalize()          # "This is a string" (only first letter caps)
+a_string.upper()               # "THIS IS A STRING" (all uppercase)
+a_string.lower()               # "this is a string" (all lowercase)
+a_string.count('is')           # 2 (counts occurrences of 'is')
+a_string.endswith('nG')        # True (checks if string ends with 'nG')
+a_string.replace('is', 'XYZ')  # "tHXYZ XYZ a sTrInG" (replaces all 'is')
+a_string.replace('i', '!', 2)  # Replace only first 2 occurrences
 
-a_string.replace('is', 'XYX')
+# Note: These methods don't change the original string!
+# Strings are immutable, so they return a NEW string
 
-a_string.replace('i' , '!', 2)
+# ============================================================================
+# SECTION 10: LIST METHODS
+# ============================================================================
+# Lists are mutable, so these methods CHANGE the original list
 
-a_string.endswith('nG')
+# Starting with a fresh list
+my_list = [3, 5, 6, 3, 'dog', 'cat', False]
 
-# Methods on lists
-#  .append(item) -> to add a single item to the list
-#  .extend([item1, item2, item3, ....]) -> to add multiple items to the list
-#  .remove(item) -> to remove a single item from the list
-#  .pop() -> to remove and return the item at the end of the list
-#  .pop(index) -> to remove and return an item at an index
+my_list.append("basketball")   # Adds one item to the end
+# Result: [3, 5, 6, 3, 'dog', 'cat', False, 'basketball']
 
-list_1
+my_list.extend(["baseball", 1])  # Adds multiple items to the end
+# Result: [..., 'basketball', 'baseball', 1]
 
-list_1.append("basketball")
-list_1
+my_list.remove("cat")          # Removes first occurrence of 'cat'
+my_list.pop()                  # Removes and returns last item
+my_list.pop(0)                 # Removes and returns item at index 0
 
-list_1.extend(["baseball", 1]) # equivalent. list + list
-list_1
+# ============================================================================
+# SECTION 11: SET METHODS
+# ============================================================================
+# Sets automatically remove duplicates
 
-list_1.remove("cat")
-list_1
+my_set = {'Jason', 'jason', 'chicken'}  # Only unique values stored
 
-list_1.pop()
-list_1
+my_set.add("fuzz")             # Adds one item
+my_set.update(['item1', 'item2'])  # Adds multiple items
+my_set.remove("Jason")         # Removes specific item
 
-list_1.pop(0)
-list_1
+# Set operations (mathematical set theory)
+set_a = {1, 2, 3, 4}
+set_b = {3, 4, 5, 6}
+
+set_a.difference(set_b)        # Items in set_a but not in set_b: {1, 2}
+set_a.intersection(set_b)      # Items in both sets: {3, 4}
+set_a.union(set_b)             # All items from both sets: {1, 2, 3, 4, 5, 6}
+set_a.symmetric_difference(set_b)  # Items in either set but not both: {1, 2, 5, 6}
+
+# ============================================================================
+# SECTION 12: DICTIONARY METHODS
+# ============================================================================
+
+my_dict = {'name': 'Jane', 'age': 23, 'fav_foods': ['pizza', 'fruit']}
+
+# Adding/updating key-value pairs
+my_dict.update([("rain", True), ("cars", "a lot")])
+# Result: {'name': 'Jane', 'age': 23, 'fav_foods': [...], 'rain': True, 'cars': 'a lot'}
+
+# Accessing dict data
+my_dict.keys()     # Returns all keys: dict_keys(['name', 'age', 'fav_foods', ...])
+my_dict.values()   # Returns all values: dict_values(['Jane', 23, [...], ...])
+my_dict.items()    # Returns key-value pairs as tuples
+
+# Removing items
+my_dict.pop("age")  # Removes 'age' key and returns its value (23)
 
 
-# Methods on sets
-# .add(item)
-# .update([item1, item2, ....])
-# .update(set1, set2, set3, ....)
-# .remove(item)
-# .difference(set2)
-# .intersection(item)
-# .union(set2)
-# .symmetric_difference(set2)
-# .issuperset(set2)
-# .issubset(set2)
-
-set(['Jason', 'jason', 'jason'])
-
-set_1.add("fuzz")
-set_1
-
-set_1.union()
 
 
+# ============================================================================
+# KEY TAKEAWAYS FROM MY LEARNING
+# ============================================================================
 
+"""
+1. Python has both MUTABLE (can change) and IMMUTABLE (cannot change) types
+   - Mutable: lists, dicts, sets
+   - Immutable: strings, tuples, numbers
+
+2. Methods vs Functions:
+   - Functions: called directly, e.g., len(my_list)
+   - Methods: called on objects with dot notation, e.g., my_list.append(5)
+
+3. Indexing starts at 0 in Python
+   - Use negative indices to count from the end: -1 is last item
+
+4. Following PEP 8 style makes code professional and readable
+
+5. Comments and docstrings help explain WHY code exists, not just WHAT it does
+"""
 dict_1
 
-dict_1.pop('age', 50)
-dict_1
+dict_1.keys()
+
+
